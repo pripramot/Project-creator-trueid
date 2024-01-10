@@ -1,5 +1,75 @@
 # Project-creator-trueid
 พื้นที่เก็บงานเขียนของพี่มิว-น้องมิ้น
+
+
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" height="200px" srcset="https://github.com/jmorganca/ollama/assets/3325447/56ea1849-1284-4645-8970-956de6e51c3c">
+    <img alt="logo" height="200px" src="https://github.com/jmorganca/ollama/assets/3325447/0d0b44e2-8f4a-4e99-9b52-a5c1c741c8f7">
+  </picture>
+</div>
+
+# Ollama
+
+[![Discord](https://dcbadge.vercel.app/api/server/ollama?style=flat&compact=true)](https://discord.gg/ollama)
+
+Get up and running with large language models locally.
+
+### macOS
+
+[Download](https://ollama.ai/download/Ollama-darwin.zip)
+
+### Windows
+
+Coming soon! For now, you can install Ollama on Windows via WSL2.
+
+### Linux & WSL2
+
+```
+curl https://ollama.ai/install.sh | sh
+```
+
+[Manual install instructions](https://github.com/jmorganca/ollama/blob/main/docs/linux.md)
+
+### Docker
+
+The official [Ollama Docker image](https://hub.docker.com/r/ollama/ollama) `ollama/ollama` is available on Docker Hub.
+
+## Quickstart
+
+To run and chat with [Llama 2](https://ollama.ai/library/llama2):
+
+```
+ollama run llama2
+```
+
+## Model library
+
+Ollama supports a list of open-source models available on [ollama.ai/library](https://ollama.ai/library 'ollama model library')
+
+Here are some example open-source models that can be downloaded:
+
+| Model              | Parameters | Size  | Download                       |
+| ------------------ | ---------- | ----- | ------------------------------ |
+| Llama 2            | 7B         | 3.8GB | `ollama run llama2`            |
+| Mistral            | 7B         | 4.1GB | `ollama run mistral`           |
+| Dolphin Phi        | 2.7B       | 1.6GB | `ollama run dolphin-phi`       |
+| Phi-2              | 2.7B       | 1.7GB | `ollama run phi`               |
+| Neural Chat        | 7B         | 4.1GB | `ollama run neural-chat`       |
+| Starling           | 7B         | 4.1GB | `ollama run starling-lm`       |
+| Code Llama         | 7B         | 3.8GB | `ollama run codellama`         |
+| Llama 2 Uncensored | 7B         | 3.8GB | `ollama run llama2-uncensored` |
+| Llama 2 13B        | 13B        | 7.3GB | `ollama run llama2:13b`        |
+| Llama 2 70B        | 70B        | 39GB  | `ollama run llama2:70b`        |
+| Orca Mini          | 3B         | 1.9GB | `ollama run orca-mini`         |
+| Vicuna             | 7B         | 3.8GB | `ollama run vicuna`            |
+| LLaVA              | 7B         | 4.5GB | `ollama run llava`             |
+
+> Note: You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.
+
+## Customize a model
+
 คู่มือการเรียนรู้ทีละขั้นตอนโดยใช้ Python และ Google Gemini AI เพื่อสร้าง Chatbots
 คุณพร้อมที่จะสำรวจโลกแห่งปัญญาประดิษฐ์แล้วหรือยัง? มาร่วมเดินทางเพื่อสร้างแชทบอทโดยใช้ Python และโมเดล Gemini AI ของ Google กันเถอะ! คำแนะนำทีละขั้นตอนนี้จะแนะนำคุณตลอดกระบวนการจัดการ generative AI และ Gemini AI ของ Google เพื่อสร้างแชทบอท นอกจากนี้เรายังจะใช้ประโยชน์จากเครื่องมืออันทรงพลังของ Google Cloud สำหรับการพัฒนาโปรแกรมและการแชร์ข้อมูล
 
@@ -33,15 +103,19 @@ pip install google-cloud-aiplatform
 ขั้นตอนที่ 4: เรียกใช้แอปพลิเคชันราศีเมถุน
 เมื่อคุณมีคีย์ API แล้ว คุณก็สามารถเรียกใช้สคริปต์ Python ได้ นี่คือตัวอย่างวิธีที่คุณสามารถทำได้:
 
-
+```
 python gemini_app.py
-ส่วนที่ 2: การสร้าง Chatbots ด้วย Google Gemini AI
-แชทบอทเป็นโปรแกรมคอมพิวเตอร์ที่ออกแบบมาเพื่อโต้ตอบกับผู้ใช้ในเวลาเดียวกัน สามารถใช้เพื่อวัตถุประสงค์ที่หลากหลาย เช่น การตอบคำถามของลูกค้า การนัดหมาย และอื่นๆ
+```
 
-ขั้นตอนที่ 1: การตั้งค่าแอปพลิเคชัน Flask
-Flask เป็นเฟรมเวิร์ก Python บนเว็บน้ำหนักเบาที่ใช้สำหรับสร้างเว็บแอปพลิเคชัน คุณสามารถตั้งค่าแอปพลิเคชัน Flask ได้โดยใช้รหัสต่อไปนี้:
+### ส่วนที่ 2: การสร้าง Chatbots ด้วย Google Gemini AI
+แชทบอทเป็นโปรแกรมคอมพิวเตอร์ที่ออกแบบมาเพื่อโต้ตอบกับผู้ใช้ในเวลาเดียวกัน สามารถใช้เพื่อวัตถุประสงค์ที่หลากหลาย 
+เช่น การตอบคำถามของลูกค้า การนัดหมาย และอื่นๆ
 
+### ขั้นตอนที่ 1: การตั้งค่าแอปพลิเคชัน Flask
 
+#### Flask เป็นเฟรมเวิร์ก Python บนเว็บน้ำหนักเบาที่ใช้สำหรับสร้างเว็บแอปพลิเคชัน คุณสามารถตั้งค่าแอปพลิเคชัน Flask ได้โดยใช้รหัสต่อไปนี้:
+
+```
 from flask import Flask
 app = Flask(__name__)
 
@@ -64,13 +138,17 @@ client = aiplatform.AIPlatformServiceClient()
 model = client.load_model('projects/[PROJECT_ID]/locations/[LOCATION]'
                            '/models/[MODEL_ID]')
 
+
 # Make a prediction
 response = model.predict(inputs=[[input]])
 
 # Print the response
 print(response)
+```
+
 ส่วนที่ 3: การใช้ประโยชน์จากเครื่องมือของ Google Cloud สำหรับการพัฒนาโปรแกรมและการแชร์ข้อมูล
-Google Cloud มีชุดเครื่องมือที่ช่วยให้นักพัฒนาสามารถเรียกใช้แอปพลิเคชันบนโครงสร้างพื้นฐานสาธารณะหรือส่วนตัวได้ นอกจากนี้ยังมีเครื่องมือสำหรับนักพัฒนาที่มีประสิทธิภาพสำหรับการพัฒนาโปรแกรมและการแบ่งปันข้อมูล
+Google Cloud มีชุดเครื่องมือที่ช่วยให้นักพัฒนาสามารถเรียกใช้แอปพลิเคชันบนโครงสร้างพื้นฐานสาธารณะหรือส่วนตัวได้ 
+นอกจากนี้ยังมีเครื่องมือสำหรับนักพัฒนาที่มีประสิทธิภาพสำหรับการพัฒนาโปรแกรมและการแบ่งปันข้อมูล
 
 ขั้นตอนที่ 1: การตั้งค่าบัญชี Google Cloud
 หากต้องการใช้เครื่องมือของ Google Cloud คุณจะต้องตั้งค่าบัญชี Google Cloud ต่อไปนี้คือวิธีที่คุณสามารถทำได้:
